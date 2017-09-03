@@ -21,7 +21,8 @@ Thats it really
 
 You may also need to update this function to match your domain, i'll prolly fix this with regex later:
 
-```function book($url){
+```
+function book($url){
 	$o = str_replace('http%3A%2F%2Fwla.fun%2Ffeed%2Fmedia%2F','',$url);
 	$o = str_replace('http://wla.fun/feed/media/','',$o);
 	$o = str_replace('%2F&action=set&type=set','',$o);
@@ -30,4 +31,5 @@ You may also need to update this function to match your domain, i'll prolly fix 
 	$o = rtrim(ucwords($o),'/');
 	
 	return $o;
-}```
+}
+```
