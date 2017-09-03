@@ -18,3 +18,16 @@ Just have php installed. No need for the files to be on the same server. Remote 
 Have a nginx (or any list of download links in html) directory ready and put the URL in the directory field when you run *feed.php*, hit "submit", the script will spit out an RSS link which you can paste into Downcast's Import Field.
 
 Thats it really
+
+You may also need to update this function to match your domain, i'll prolly fix this with regex later:
+
+```function book($url){
+	$o = str_replace('http%3A%2F%2Fwla.fun%2Ffeed%2Fmedia%2F','',$url);
+	$o = str_replace('http://wla.fun/feed/media/','',$o);
+	$o = str_replace('%2F&action=set&type=set','',$o);
+	$o = str_replace('%20',' ',$o);
+	
+	$o = rtrim(ucwords($o),'/');
+	
+	return $o;
+}```
