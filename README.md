@@ -23,8 +23,8 @@ You may also need to update this function to match your domain, i'll prolly fix 
 
 ```
 function book($url){
-	$o = str_replace('http%3A%2F%2Fwla.fun%2Ffeed%2Fmedia%2F','',$url);
-	$o = str_replace('http://wla.fun/feed/media/','',$o);
+	$o = str_replace('http%3A%2F%2Fxxxxxx.xxxx%2Fxxxx%2Fxxxx%2F','',$url);
+	$o = str_replace('http://xxx.xxx/xx/xx','',$o);
 	$o = str_replace('%2F&action=set&type=set','',$o);
 	$o = str_replace('%20',' ',$o);
 	
