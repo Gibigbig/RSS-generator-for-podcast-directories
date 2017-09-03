@@ -6,6 +6,19 @@
 $google['key'] = '';
 $google['cx'] = '';
 
+// modify this function to suit your domain
+
+function book($url){
+	$o = str_replace('http%3A%2F%2Fxxxxxx.xxxx%2Fxxxx%2Fxxxx%2F','',$url);
+	$o = str_replace('http://xxx.xxx/xx/xx','',$o);
+	$o = str_replace('%2F&action=set&type=set','',$o);
+	$o = str_replace('%20',' ',$o);
+	
+	$o = rtrim(ucwords($o),'/');
+	
+	return $o;
+}
+
 
 // You probably won't need to edit below this
 
@@ -34,16 +47,7 @@ function name($url){
 	return $o;
 }
 
-function book($url){
-	$o = str_replace('http%3A%2F%2Fwla.fun%2Ffeed%2Fmedia%2F','',$url);
-	$o = str_replace('http://wla.fun/feed/media/','',$o);
-	$o = str_replace('%2F&action=set&type=set','',$o);
-	$o = str_replace('%20',' ',$o);
-	
-	$o = rtrim(ucwords($o),'/');
-	
-	return $o;
-}
+
 
 function image($book){
 	$o = str_replace(' ','+',$o);
