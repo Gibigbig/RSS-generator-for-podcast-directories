@@ -4,7 +4,7 @@
 
 //set your API keys
 $google['key'] = '';
-$google['cx'] = ':kkxsmnrrwzs';
+$google['cx'] = '';
 
 
 // You probably won't need to edit below this
